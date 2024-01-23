@@ -26,7 +26,7 @@ It says `FATAL ERROR segment too short (segment 0x00000000)`. After identifying 
 This change was enough for the file to be decoded into a viewable image:  
 ![](https://github.com/Jonnen98cool/CTF_writeups/blob/main/mapna_ctf_2024/helper/partial_flag.png)  
 
-So close! I studied the verbose output - which now lacked any warnings or errors - to try figure out how to view the remainder of the image. I tried changing several values, for example `data_length=??` and observed if this had a positive effect on the decoded image. Eventually I discovered that the image resolution was 257x19. I needed "more image" so I searched for this value's hexadecimal equivalent (`0x101`), found it to be bytes 27-28, and modified them to `0x401`, ran `jbig2dec` again and voila:  
+So close! I studied the verbose output - which now lacked any warnings or errors - to try figure out how to view the remainder of the image. I tried changing several values, for example setting `data_length=339` to a higher value, and observed if this had a positive effect on the decoded image. Eventually I discovered that the image resolution was 257x19. I needed "more image" so I searched for this value's hexadecimal equivalent (`0x101`), found it to be bytes 27-28, and modified them to `0x401`. I then ran `jbig2dec` again and voila:  
 ![](https://github.com/Jonnen98cool/CTF_writeups/blob/main/mapna_ctf_2024/helper/complete_flag.png)  
 
 I then spent an embarissingly long time trying to actually submit the flag, eventually having to ask my teammate how he interpreted the individual characters...    
