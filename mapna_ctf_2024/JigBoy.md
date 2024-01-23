@@ -20,11 +20,13 @@ I look for tools to open a `.jb2` file and find `jbig2dec`. I run `jbig2dec flag
 Eventually I had to resort to trial-and-error modification of bytes according to the error message I was given. First up is this error:
 ![](https://github.com/Jonnen98cool/CTF_writeups/blob/main/mapna_ctf_2024/error1.png)
 
-It says `FATAL ERROR segment too short (segment 0x00000000)`. After identifying which 4 bytes refer to the segment (currently valued `0x00000000`) and changing these to no avail, I target `data_length=1` instead. I look for a `0x01` byte near the begining of the file and set it to `0x02`, running `jbig2dec` again until my change shows up. Through trial and error, I find that I need to edit the 24th byte. I set it to exponentially higher values to try to solve the error and get this:
+It says `FATAL ERROR segment too short (segment 0x00000000)`. After identifying which 4 bytes refer to the segment (currently valued `0x00000000`) and changing these to no avail, I target `data_length=1` instead. I look for a `0x01` byte near the begining of the file and set it to `0x02`, running `jbig2dec` again until my change shows up. Through trial and error, I find that I need to edit the 24th byte. I set it to exponentially higher values to try to solve the error and get this. Setting it to `0xA1` for example produces a warning: `WARNING extra data in segment (segment 0x00000000)`. Eventually I find that `0x13` is the correct value. This change was enough for the file to be decoded into a viewable image:
+![](https://github.com/Jonnen98cool/CTF_writeups/blob/main/mapna_ctf_2024/partial_flag.png)  
 
+So close! I studied the verbose output - which now lacked any warnings or errors - to try figure out how to view the remainder of the image. I tried changing several values and observing if this had a positive effect on the decoded image. Eventually I discovered that the image viewer I was using displays the image resolution, which was 257x19. I needed "more image" so I searched for this value's hexadecimal equivalent (``0x101) and modified it to something higher, ran `jbig2dec` again and voila:
+![](https://github.com/Jonnen98cool/CTF_writeups/blob/main/mapna_ctf_2024/complete_flag.png)  
 
-
-
+I then spent an embarissingly long time trying to actually submit the flag, eventually having to ask my teammate how he interpreted the individual characters...  
 
 
 
