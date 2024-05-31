@@ -4,7 +4,7 @@
 
 This is a challenge that aims to be easy for anyone to solve. Do not despare if its not, the reward will just be higher. Make sure to have fun in the process of learning!
 
-Author: Jimmie Rudvall
+Author: Jimmie Rudvall  
 https://phlags.appsec.nu </em>
 
 ## Solution
