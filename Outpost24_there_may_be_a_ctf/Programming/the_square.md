@@ -5,7 +5,7 @@
 
 Your mission is to decode these secret messages. If decoded correctly, they might lead you to a surprising and crucial discovery. Follow the clues, use your programming skills, and find out what Wintermute is hiding.
 
-Author: Jimmy Johansson - bearbetning@outlook.com
+Author: Jimmy Johansson - bearbetning@outlook.com  
 File: [xcript.txt](https://github.com/Jonnen98cool/CTF_writeups/blob/main/Outpost24_there_may_be_a_ctf/helper/xcript.txt)</em>
 
 ## Thought Process
