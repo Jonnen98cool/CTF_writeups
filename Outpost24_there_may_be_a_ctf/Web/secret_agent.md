@@ -11,7 +11,7 @@ He is, however, secrative and will not spill any of his beans to anyone he beliv
 
 Note: This challenge will reset every 15 minutes.
 
-Author: Jimmie Rudvall
+Author: Jimmie Rudvall  
 https://secret-agent.appsec.nu </em>
 
 ## Thought Process
