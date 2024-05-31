@@ -1,7 +1,7 @@
 # Shortify (500p)
 ## Challenge Description  
 
-<em> Some careless developer left a testing environment for a demo app exposed the public internet, see what you can find.
+<em> Some careless developer left a testing environment for a demo app exposed the public internet, see what you can find.  
 https://shortifier.appsec.nu </em>
 
 ## Thought Process
