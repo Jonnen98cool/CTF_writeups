@@ -3,7 +3,7 @@
 
 <em> Our secret agents have recovered a short encrypted message that is believed to contain one of the flags capable of turning off the evil AI Wintermute. Despite their best efforts, our crypto analysts have been unsuccessful in deciphering the message. They now believe that brute-forcing is the only remaining method to crack this "Exclusive Cipher". The rumors says the key might consist of up to 12 digits long key, but no one really knows.
 
-Author: Mikael Svall
+Author: Mikael Svall  
 **4d3 6367e 5a49 5 058 4766 61 767b 757 66f6 d6 95 d41 715b4 4706 c7b** </em>
 
 ## Thought Process
