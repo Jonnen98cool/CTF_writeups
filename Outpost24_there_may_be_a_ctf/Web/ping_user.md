@@ -3,7 +3,7 @@
 
 <em> The evil AI Wintermute has taken over our web-based ping tool! This tool was previously vulnerable, but Wintermute has patched the known vulnerabilities, making it more challenging to exploit. Your mission is to find a new way in and save the summer from Wintermute's icy grasp
 
-Author: Mikael Svall
+Author: Mikael Svall  
 https://ping.appsec.nu/ </em>
 
 
