@@ -5,14 +5,14 @@
 
 Your mission, should you choose to accept it, is to navigate through the web application and find the hidden flag and you get the job.
 
-Author: Mikael Svall
+Author: Mikael Svall  
 https://opportunity.appsec.nu/ </em>
 
 ## Solution
 1. After poking around a bit, i find three references to "glob":
 	- "Start your Globbal career here!"
 	- "Shake that glob!"
-	- "snowglob://""
+	- "snowglob://"    
 That can't be a coincidence, so I google it.
 2. Turns out they are references to something called "file globbing", which is essentially using regex-like syntax for filename expansion. I do some research on how it works and try it out by adding the wildcard glob to where `joblist1.txt` normally goes: `https://opportunity.appsec.nu/job_statistics/*`. The functionality which fetches "Size in Bytes of the list" now fetches bytes of all files available, and we see there exists a previously hidden fifth list with 26 bytes. I am definitely on the right track, considering the description.
 3. Now it's a matter of trying to read the fifth list which I am confident will contain the flag. You can read the other four lists by going to `/jobs/joblistX.txt`, where `X` is a number 1-4. There is no `joblist5.txt` or `joblist0.txt` and file globbing does not work on `/jobs/`. If we do `/job_statistics/j*`, it selects all files which start with a "j", and the fifth file does not get included. We can use this technique to brute-force-enumerate the name of the hidden file.
