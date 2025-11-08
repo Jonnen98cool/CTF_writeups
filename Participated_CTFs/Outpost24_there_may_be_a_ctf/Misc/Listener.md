@@ -14,7 +14,7 @@ Important Rules:
 
 Author: Mikael Svall  
 `ssh -i id_rsa listener@listener.appsec.nu`   
-File: [id_rsa](https://github.com/Jonnen98cool/CTF_writeups/blob/main/Outpost24_there_may_be_a_ctf/helper/id.rsa)</em>
+File: [id_rsa](helper/id.rsa)</em>
 
 ## Thought Process
 1. "Ah, a passphrase protected `id_rsa`, I am no stranger to this. Since the challenge is only 300 points it is probably crackable with rockyou.txt."

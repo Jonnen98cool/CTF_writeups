@@ -7,7 +7,7 @@ You'll need to look beyond the surface to find the flag.
 
 Author: Mikael Svall
 
-File: [stegoflag.jpg](https://github.com/Jonnen98cool/CTF_writeups/blob/main/Outpost24_there_may_be_a_ctf/helper/stegoflag.jpg)</em>
+File: [stegoflag.jpg](helper/stegoflag.jpg)</em>
 
 
 ## Thought Process
