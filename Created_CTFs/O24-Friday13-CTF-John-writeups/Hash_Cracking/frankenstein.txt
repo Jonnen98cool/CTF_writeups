@@ -1,0 +1,4 @@
+1. A little tricky, as the hash provided is a single MD5-looking hash. But the hash is infact two stitched together half-MD5 hashes (hashcat mode 5100). The idea is that the description and title should hint towards this.
+2. Divide the single hash into two hashes at the halfway mark, these are the ones you are supposed to crack with -m 5100 and rockyou.txt:
+	hashcat -m 5100 hashes.txt ~/john_hacks/wordlists/login_credentials/rockyou.txt
+3. Flag:   stitch@together

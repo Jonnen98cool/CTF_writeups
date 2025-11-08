@@ -1,0 +1,3 @@
+The solution is to go to my public github and find the public challenge 14. This repo contains a solution.txt which holds the cracked hash.
+
+Flag: wow_you_triumphed_over_the_mighty_bcrypt_and_cracked_the_hash!

@@ -1,0 +1,6 @@
+1. steghide --extract -sf mandelbrot.jpg
+2. Open up haunted_box.zip with acquired PW
+3. Find the codes in the three images, hints are inside jumpscare.txt
+4. Use these codes to open up the images' respective .zip files
+5. Brute force the password for 1-9.jpg using stegseek. The flag is comprised of the 9 passwords:
+6. Flag:   gimp_has_many_settings_which_i_do_not_understand

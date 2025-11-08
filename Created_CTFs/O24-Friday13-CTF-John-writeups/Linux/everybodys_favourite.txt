@@ -1,0 +1,1 @@
+1. The flag appears in the MOTD after successful SSH login. Flag: C4nt_all_be_w1nners

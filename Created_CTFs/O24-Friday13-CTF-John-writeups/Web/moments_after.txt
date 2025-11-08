@@ -1,0 +1,5 @@
+1. Comply with the parameter requirements when attempting to access /
+2. Not much to do now. The idea is that users should brute-force parameters, by prefixing their bruteforce with "gallery_" (just like the other parameters have). There are a couple of parameters which produce different results, like "gallery_test", the idea here is just to give users the feeling of being on the right track.
+3. Requesting   ?gallery_png=yes&gallery_showMax=True&gallery_experimentalMode=1&gallery_hidden=1   gives the flag.
+
+Flag: P4r4m_fuzz1ng_n0t_b4d_1d34

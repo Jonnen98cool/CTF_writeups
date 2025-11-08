@@ -1,0 +1,8 @@
+1. hashes.txt can be extracted with steghide from the provided image, no password required
+2. Reverse image search of cof.jpg reveals it's probably refering to Cry of Fear, image name supports this
+3. You have to crack the argon2id hashes, For this I found 2 github crackers. Hashcat currently (okt 2024) doesnt support. You have to manually browse the wiki (https://cry-of-fear.fandom.com/wiki/Cry_of_Fear_Wiki) and create a custom wordlist from interesting phrases. This is a lot of work, building your own custom wordlist and hoping it will crack the hashes, but it's the only way. Most of the hashes are more than 1 word long. Here is an example program I used to test all hashes:
+	python crack_argon2.py -c '$argon2id$v=19$m=19,t=2,p=1$TXI0bFBNcUlFaVV2bUw1OA$iSk840x8+46u+ljfUgV9BQ' -w ../../ctf_chall_15/cheat_wordlist.txt
+4. Flag:   Ugh...Argh... French..._Sony Ericsson W610i_Doctor Purnell_The Black Day_Sawrunner_Saxon Avenue_Team Psykskallar_Drowned
+
+EDIT: Turns out that manually finding interesting phrases is NOT the only way :D Good job to Jakob for solving the challenge by essentially creating a crawler which extracts phrases based on some regex.
+EDIT again: Made my own crawler and scraper which extracts 1,2,3,4-word phrases from the wiki: https://github.com/Jonnen98cool/webcrawler_phrases_extractor

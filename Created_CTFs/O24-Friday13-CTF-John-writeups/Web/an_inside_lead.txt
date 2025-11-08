@@ -1,0 +1,11 @@
+1. First flag and the TODO list necessary for next step is found at /admin/todo.txt (this is a route as opposed to a folder)
+2. Next step is bruteforce /api?auth=*number*    Here you test numbers 0-99 according to the todo list. auth=39 is the correct number.
+3. Backdoor for /admin (also hinted at inside the todo list) is requesting /admin with X-Forwarded-For: 192.168.0.101
+4. When inside /admin, the X-Forwarded-For: 192.168.0.101 trick does not work when trying to change CTF title, but it does work for "Show Users" which will reveal the admin session_id
+5. We can now log in with the admin session id
+6. "Change Title" is vulnerable to second-order error-based SQL injection (injecting a ' will give verbose error). Inject in Burp:   title=0wn3d'+||+(SELECT+password+FROM+user+WHERE+id+=+4)--
+7. Go to / and the flag is in the title.
+
+
+
+flag: 4lw4y5-p3rf0rm-53rv3r51d3-v4l1d4t10n-0n-pr1v1l3g3d-r3qu35t5---M4k3-y0ur-b4ckd00r5-1mp0551bl3-t0-gu355---IPs-c4n-50m3t1m35-3451ly-b3-5p00f3d---Th1s_15_why_y0u_4lw4y5_5t0r3_p455w0rd5_h45h3d&54lt3d

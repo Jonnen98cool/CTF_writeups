@@ -1,0 +1,12 @@
+1. Intercepting a request to / shows that there is an API:   GET /skrotg%C3%A5rn?p=1&s=0&q=1 HTTP/1.1
+	- Setting s=1 includes special items in the search
+	- Setting q=0 sets minimum quantity to 0, silverstål now pops up
+2. Goal is to purchase the silverstål, but we have no money!
+	- Notice the Holset turbo special item with a 50% discount. Attempting to purchase it triggers a:   GET /k%C3%B6p_skrot/5?50 HTTP/1.1   where the parameter name "50" is the discount (this parameter has no value). Setting it to 100 allows us to purchase the item.
+3. Now we can "afford" silverstål, but it is still out of stock.
+	- If we set q=-10000 or less we will get a new item called "???". This reveals (in swedish) that we can use a CRANE method for a digital interface to scrapyard crane, and that the code for this crane is 1234. 
+	- We could also have found this CRANE methodby running OPTIONS on /skrotgårn
+	- Now we can use the following parameters to update the stock:   CRANE /skrotg%C3%A5rn?code=1234&getXFromScrapyard=10&itemId=3 HTTP/1.1
+4. With silverstål now in stock, we can use what we've learned and purchase it, completing the challenge.
+
+Flag: S1lv3r_St33l_15_r0ck_h4rd

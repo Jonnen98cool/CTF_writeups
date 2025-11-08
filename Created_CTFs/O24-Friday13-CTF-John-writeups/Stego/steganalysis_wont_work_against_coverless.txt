@@ -1,0 +1,10 @@
+1. Find embedded key.txt file in the .wav file, PW is:   Natas666  (found in rockyou)
+2. From key.txt, realise that the last modified time of each of the 24 mining transmissions 1970:01:01 00:0?:??. Convert this to UNIX Epoch, this is 't' in the formula in key.txt
+3. Decode the 24-char flag: N4t45_15_D3v1l_1nc4rn4t3
+
+
+
+Here's how I changed the timestamps (this is what "touch" is used for!)
+	- touch -m -t 197001010000.01 mining_report1.jpg
+	- ...
+	- touch -m -t 197001010000.15 mining_report24.jpg

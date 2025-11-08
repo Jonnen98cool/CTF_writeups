@@ -1,0 +1,8 @@
+- Safe method, covering (most) all our bases (21min on GPU, 5.7MH/s):
+	hashcat -m 900 -a 3 "bfe85af6a5012498d325db63aac5dd4a" -1=?s?l -2=01 ?u?l?l?l?l?l?1?s?2?d --potfile-disable
+
+- Riskier method where we assume the 1-2 special characters is indeed just an underscore (18s on GPU, 5.7MH/s):
+	hashcat -m 900 -a 3 "bfe85af6a5012498d325db63aac5dd4a" -2=01 ?u?l?l?l?l?l?l_?2?d --potfile-disable 
+
+
+bfe85af6a5012498d325db63aac5dd4a:Wallman_13
