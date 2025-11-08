@@ -2,7 +2,7 @@
 Hello! I'm John, I work as a pentester at Outpost24. Me and my colleague Cathleene Sandgren are the main authors behind the wwwinterpub on-premises CTF challenge. Here's my writeup for our challenges. 
 
 # Challenges
-For this on-premises CTF, users get an initial sequence of numbers `0761` + 6 challenges or "Fragments" which they must solve. These challenges were designed to be able to be solved with pen and paper and your phone. Players got access to the website at `https://wwwinterpub.samurai.nu/s3cf3st_ctf` which acted as the main "hub" of the CTF, where challenge descriptions and clues were present. It looked a little something like this:<br>
+For this on-premises CTF, players get an initial sequence of numbers `0761` + 6 challenges or "Fragments" which they must solve. These challenges were designed to be able to be solved with pen and paper and your phone. Players got access to the website at `https://wwwinterpub.samurai.nu/s3cf3st_ctf` which acted as the main "hub" of the CTF, where challenge descriptions and clues were present. It looked a little something like this:<br>
 ![Website screenshot](https://github.com/Jonnen98cool/CTF_writeups/blob/main/Created_CTFs/Securityfest2025_wwwinterpub_CTF/images/hub_image.png)<br><br>
 
 The idea was that each challenge will give a number 0-9 as the "flag", and players append the 6 numbers they get from solving the challenges, in order, to the initial sequence of `0761`. This forms a complete phone number which players call, and the answering machine provides them with a message which basically tells them to go to a certain path on the webapp. The content on that path then shows a secret phrase which they verbally state to any of the guys at the Outpost24 booth to claim their prize. The players don't immediately know that each challenge has a single digit as its flag, but it becomes apparent after solving multiple challenges.
@@ -22,7 +22,7 @@ The first part of this challenge's description is a hint to the location of the 
 <b>Flag: 4</b>
 
 ## Challenge 3
-![Chall3 description](https://github.com/Jonnen98cool/CTF_writeups/blob/mainCreated_CTFs/Securityfest2025_wwwinterpub_CTF/images/fragment3_desc.png)<br><br>
+![Chall3 description](https://github.com/Jonnen98cool/CTF_writeups/blob/main/Created_CTFs/Securityfest2025_wwwinterpub_CTF/images/fragment3_desc.png)<br><br>
 This challenge is - as the description states - a chessboard located among some barrels in the venue. The chessboard looked something like this:<br><br>
 ![Chall3 challenge](https://github.com/Jonnen98cool/CTF_writeups/blob/main/Created_CTFs/Securityfest2025_wwwinterpub_CTF/images/fragment3_chessboard.png)<br><br>
 
@@ -41,7 +41,7 @@ This challenge was originally (and possibly still) one of the trickiest ones due
 
 ## Challenge 4
 ![Chall4 description](https://github.com/Jonnen98cool/CTF_writeups/blob/main/Created_CTFs/Securityfest2025_wwwinterpub_CTF/images/fragment4_desc.png)<br><br>
-With challenge being called "A Bit of Art" and the sole description being an image, it's clear that you will need to extract the binary message from the image. Reading top-down and left-to-right gives `010000100100010101000110010011110101001001000101000000000101010001010111010011110000000001001001000000000101001101010100010000010100111001000100` which translates
+With the challenge being called "A Bit of Art" and the sole description being an image, it's fairly clear that you will need to extract the binary message from the image. Reading top-down and left-to-right gives `010000100100010101000110010011110101001001000101000000000101010001010111010011110000000001001001000000000101001101010100010000010100111001000100` which translates
  to `BEFORE\00TWO\00I\00STAND`. Slightly tricky, but the message actually references `1`, which stands before two.<br><br>
 
 <b>Flag: 1</b>
