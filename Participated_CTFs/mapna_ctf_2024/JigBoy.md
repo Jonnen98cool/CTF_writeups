@@ -3,9 +3,9 @@
 
 
 ## Initial thought process
-We are given a small file of 415 bytes named [flag.damaged](https://github.com/Jonnen98cool/CTF_writeups/blob/main/mapna_ctf_2024/helper/flag.damaged), it looks like this:
+We are given a small file of 415 bytes named [flag.damaged](helper/flag.damaged), it looks like this:
 
-![](https://github.com/Jonnen98cool/CTF_writeups/blob/main/mapna_ctf_2024/helper/original_file.png)
+![](helper/original_file.png)
 
 Running `file flag.damaged` gives `flag.damaged: PGP Secret Sub-key -`, which doesn't seem right. I suspect the file is corrupt somehow and I need to restore it (the file name also hints to this).  
 
