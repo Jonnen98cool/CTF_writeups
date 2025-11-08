@@ -4,7 +4,7 @@
 <em> The evil AI Wintermute has devised a cunning plan to conquer humanity by using nostalgia against us. Wintermute has re-generated all the summer hits from the 80s, embedding a secret message that could make people give up all resistance in the fight against AI. Your mission is to uncover this hidden message and stop Wintermute's insidious plot.
 
 Author: Mikael Svall
-File: [ctf-video.mp4](helper/ctf-video.mp4)</em>
+File: [ctf-video.mp4](../helper/ctf-video.mp4)</em>
 
 
 ## Thought Process
