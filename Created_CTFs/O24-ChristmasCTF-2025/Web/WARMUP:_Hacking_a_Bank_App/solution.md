@@ -1,0 +1,1 @@
+In the POST request to `/Security/Transactions.aspx`, note that the `__EVENTARGUMENT` parameter differs for the two messages this user has. Maybe you can modify it and read other users' messages? You can indeed, and to get the flag you set the value to `60112` and get the following flag: `N3v3r_Und3r35t1m4t3_Th3_P0w3r_Of_ID0R`

@@ -1,0 +1,19 @@
+This solution is one of many plausible.
+
+1. Googling "-5FKNViujeM" (with the quotes to google exact phrase) takes us to a song by Kavinsky: Pacific Coast Highway
+2. The song references a "ghost car", this must be what description is after.
+3. Googling "ghost car pacific coast highway" (without quotes) gives us some information about a police chase that occured in Garden City, Georgia. For example:
+	- https://www.reddit.com/r/outrun/comments/7rgzn1/nypd_ghost_car_chase_samples_taken_by_kavinsky/
+	- https://www.youtube.com/watch?v=kX9ASITl4bU
+		- Comment on this video: "Probably a 1989 Chevy Corsica with a 2.8 Multi Port Fuel Injection engine, ..."
+
+Googling "ghost car garden city pd" gives:
+	- https://factorfaked.fandom.com/wiki/Ghost_Car
+	- https://www.reddit.com/r/UrbanMyths/comments/1bwotv6/ghost_car_disappears_during_police_chase/
+		- From here there's a comment about "Fact or Faked". Googling "fact or faked ghost car" gives https://www.youtube.com/watch?v=C6IORn_I07k
+	- https://www.youtube.com/watch?v=-k2ZEyxA1wc
+		- Comment on this video revealing "So did we ever find out how this Chevy Corsica got through that fence?": https://www.youtube.com/watch?v=-k2ZEyxA1wc
+
+
+There are other sources also stating the car manufacturer and brand.
+Flag: chevrolet_corsica_white
